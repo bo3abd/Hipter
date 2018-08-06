@@ -8,7 +8,7 @@ const client = new Client({ disableEveryone: true });
 
 const GOOGLE_API_KEY = "AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8";
 
-const PREFIX = '/';
+const PREFIX = '!A';
 
 
 const youtube = new YouTube(GOOGLE_API_KEY);
@@ -225,7 +225,7 @@ client.on('message', message => {
   if (!message.content.startsWith(PREFIX)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
-  if (message.author.id !== "381084760426020865") return;
+  if (message.author.id !== "472052319006228509") return;
 
 if (message.content.startsWith(PREFIX + 'setstream')) {
   client.user.setGame(argresult, "https://www.twitch.tv/darkknite55");
@@ -244,26 +244,8 @@ if (message.content.startsWith(PREFIX + 'setavatar')) {
 }
 });
 
-var prefix = '/';
-
-client.on('message', msg => {
-	if (msg.content.startsWith(prefix + 'help')) {
-msg.author.send("Commands ستاتي " + `  **
-
-   "  : الاوامر "
-:headphones:  ${prefix}play |اسم لاغنيه / رابط الاغنية
-:headphones:  ${prefix}skipللإنتقاال الى الاغنيه التاليه (\اذا كان هناك بقائمة الانتظار\
-:headphones:  ${prefix}stop|لأيقاف الموسيقى
-:headphones:  ${prefix}volume |لتغير حجم الصوت
-:headphones:  ${prefix}np | لإقاف الموسيقى مؤقتا
-:headphones:  ${prefix}resume |لاعادت تشغيل الاغنية الموجودة
-**`);
- }
-});
 
 
 
 
 client.login(process.env.BOT_TOKEN);
-
-
