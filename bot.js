@@ -24,11 +24,11 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
 console.log(`[M] ${client.users.size}`)
-    client.user.setStatus("idle")
+    client.user.setStatus("dnd")
 });
 
 
-const prefix = "A"
+const prefix = "!A"
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -219,8 +219,8 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "A";
-const devs = ['415649344864387072'];
+const adminprefix = "!A";
+const devs = ['471671455390629908'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
